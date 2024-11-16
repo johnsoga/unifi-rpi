@@ -1,0 +1,17 @@
+---
+- name: Install Applications
+  hosts: all
+
+  tasks:
+    - name: Install Software Packages
+      ansible.builtin.apt:
+        name:
+            - ufw
+            - vim
+        state: present
+        update_cache: yes
+      become: yes
+
+    - name: Set Timezone to America/New_York
+      community.general.timezone:
+        name: America/New_York
