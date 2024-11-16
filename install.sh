@@ -80,9 +80,9 @@ function install_unifi() {
         exit 1
     fi
 
-    mkdir $UNIFI_PATH
-    cp $SOURCE_PATH/docker-compose.yaml $UNIFI_PATH/docker-compose.yaml
-    chown -R $PRIMARY_USER:$PRIMARY_USER $UNIFI_PATH
+    sudo mkdir -p $UNIFI_PATH
+    sudo cp $SOURCE_PATH/docker-compose.yaml $UNIFI_PATH/docker-compose.yaml
+    sudo chown -R $PRIMARY_USER:$PRIMARY_USER $UNIFI_PATH
 }
 
 if test -f ${CONFIG_FILE}; then
