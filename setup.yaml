@@ -8,6 +8,7 @@
         name:
             - ufw
             - vim
+            - netplan.io
         state: present
         update_cache: yes
       become: yes
