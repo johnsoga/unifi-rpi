@@ -89,6 +89,7 @@ function install_unifi() {
     printf "Creating directory ($MONGO_PATH)...\n"
     sudo mkdir -p $MONGO_PATH
     sudo chown -R $PRIMARY_USER:$PRIMARY_USER $UNIFI_PATH
+    sudo chown -R $PRIMARY_USER:$PRIMARY_USER $MONGO_PATH
 }
 
 if test -f ${CONFIG_FILE}; then
