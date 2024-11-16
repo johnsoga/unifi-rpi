@@ -75,8 +75,8 @@ function install_docker() {
 
 function install_unifi() {
 
-    if [ "$UNIFI_PATH" = "" ]; then
-        printf "FAILURE: No Path Provided for UNIFI Install!\n"
+    if [ "$UNIFI_PATH" = "" ] || [ "$MONGO_PATH" = "" ]; then
+        printf "FAILURE: No Path Provided for Unifi or Mongo Install!\n"
         exit 1
     fi
 
