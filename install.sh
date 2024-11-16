@@ -1,7 +1,6 @@
 #!/bin/bash
 
 UBUNTU_CODENAME=jammy
-PRIMARY_USER=""
 SOURCE_PATH=$PWD
 CONFIG_FILE=$SOURCE_PATH/params.conf
 
@@ -72,6 +71,18 @@ function install_docker() {
 
     printf "Adding user ($PRIMARY_USER) to docker group...\n"
     sudo usermod -aG docker $PRIMARY_USER 
+}
+
+function install_unifi() {
+
+    if [ "$UNIFI_PATH" = "" ]; then
+        printf "FAILURE: No Path Provided for UNIFI Install!\n"
+        exit 1
+    fi
+
+    mkdir $UNIFI_PATH
+    cp $SOURCE_PATH/docker-compose.yaml $UNIFI_PATH/docker-compose.yaml
+    chown -R $PRIMARY_USER:$PRIMARY_USER $UNIFI_PATH
 }
 
 if test -f ${CONFIG_FILE}; then
