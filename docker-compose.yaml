@@ -4,9 +4,9 @@ services:
     image: lscr.io/linuxserver/unifi-network-application:latest
     container_name: unifi-network-application
     env_file:
-      - docker.env
+      - .env
     volumes:
-      - /path/to/unifi-network-application/data:/config
+      - ${UNIFI_PATH}/data:/config
     ports:
       - 8443:8443
       - 3478:3478/udp
