@@ -19,7 +19,7 @@ services:
       - 5514:5514/udp #optional
     restart: unless-stopped
   unifi-db:
-    image: docker.io/mongo:<version tag>
+    image: mongodb-raspberrypi4-unofficial-r6.0.14
     container_name: unifi-db
     env_file:
       - .env
