@@ -18,3 +18,12 @@ services:
       - 6789:6789 #optional
       - 5514:5514/udp #optional
     restart: unless-stopped
+  unifi-db:
+    image: docker.io/mongo:<version tag>
+    container_name: unifi-db
+    env_file:
+      - .env
+    volumes:
+      - ${MONGO_PATH}:/data/db
+      - ${MONGO_PATH}/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro
+    restart: unless-stopped
