@@ -96,3 +96,4 @@ fi
 create_user
 install_ansible
 install_docker
+install_unifi
