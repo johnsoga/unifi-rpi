@@ -88,7 +88,7 @@ function install_unifi() {
     sudo cp $SOURCE_PATH/docker.env $UNIFI_PATH/.env
     printf "Creating directory ($MONGO_PATH)...\n"
     sudo mkdir -p $MONGO_PATH
-    printf ("Copying Mongo Kickstart File...\n"
+    printf "Copying Mongo Kickstart File...\n"
     sudo cp $SOURCE_PATH/init-mongo.sh $MONGO_PATH/init-mongo.sh
     
     sudo chown -R $PRIMARY_USER:$PRIMARY_USER $UNIFI_PATH
