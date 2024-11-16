@@ -84,6 +84,8 @@ function install_unifi() {
     sudo mkdir -p $UNIFI_PATH
     printf "Copying Docker Compose File...\n"
     sudo cp $SOURCE_PATH/docker-compose.yaml $UNIFI_PATH/docker-compose.yaml
+    printf "Copying Docker Env File...\n"
+    sudo cp $SOURCE_PATH/docker.env $UNIFI_PATH/docker.env
     sudo chown -R $PRIMARY_USER:$PRIMARY_USER $UNIFI_PATH
 }
 
