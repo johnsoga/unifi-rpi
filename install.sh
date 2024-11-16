@@ -86,6 +86,8 @@ function install_unifi() {
     sudo cp $SOURCE_PATH/docker-compose.yaml $UNIFI_PATH/docker-compose.yaml
     printf "Copying Docker Env File...\n"
     sudo cp $SOURCE_PATH/docker.env $UNIFI_PATH/.env
+    printf "Creating directory ($MONGO_PATH)...\n"
+    sudo mkdir -p $MONGO_PATH
     sudo chown -R $PRIMARY_USER:$PRIMARY_USER $UNIFI_PATH
 }
 
